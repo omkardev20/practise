@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loops Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>01 · Loops</h1>
+    <ul id="exerciseList"></ul>
+    <p class="progress" id="progress"></p>
+  </aside>
+
+  <main>
+    <header>
+      <h2 id="title"></h2>
+      <p id="desc"></p>
+    </header>
+
+    <details class="box" id="hintBox">
+      <summary>Show hint</summary>
+      <p id="hint"></p>
+    </details>
+
+    <details class="box">
+      <summary>Loop cheat sheet</summary>
+<pre>for (let i = 1; i &lt;= 5; i++) { }    // count: start; keep going while true; step
+for (let i = 5; i &gt;= 1; i--) { }    // count backwards
+for (const item of array) { }       // VALUES of an array or string
+for (const key in object) { }       // KEYS of an object
+while (n &gt; 0) { n--; }              // when you don't know how many rounds
+
+break;      // leave the loop
+continue;   // skip to the next round
+arr.push(x) // add x to the end of an array
+a % b       // remainder: 7 % 2 is 1, so 7 is odd</pre>
+    </details>
+
+    <textarea id="editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off"></textarea>
+
+    <div class="actions">
+      <button id="runBtn">▶ Run <kbd>Ctrl + Enter</kbd></button>
+      <button id="resetBtn" class="secondary">Reset code</button>
+    </div>
+
+    <section class="output">
+      <div class="output-head">Console</div>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
