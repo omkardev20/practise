@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backend Coding Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>15 · Backend Coding</h1>
+    <ul id="exerciseList"></ul>
+    <p class="progress" id="progress"></p>
+    <p class="sync" id="syncStatus"></p>
+  </aside>
+
+  <main>
+    <header>
+      <h2 id="title"></h2>
+      <p id="desc"></p>
+    </header>
+
+    <details class="box" id="hintBox">
+      <summary>Show hint</summary>
+      <p id="hint"></p>
+    </details>
+
+    <details class="box">
+      <summary>Backend Core Cheat Sheet</summary>
+<pre>// 1. Express Middleware Shape:
+function middleware(req, res, next) {
+  // do check or attach data
+  if (failed) return res.status(401).json({ error: "Unauthorized" });
+  next(); // pass to next handler
+}
+
+// 2. asyncHandler Wrapper (no try/catch boilerplate):
+const asyncHandler = (fn) => (req, res, next) => {
+  Promise.resolve(fn(req, res, next)).catch(next);
+};
+
+// 3. HTTP Status Codes:
+// 200 OK          201 Created       204 No Content
+// 400 Bad Request 401 Unauthorized  403 Forbidden  404 Not Found
+// 429 Rate Limit  500 Server Error
+
+// 4. Token Parsing:
+// Header: "Bearer abc123xyz"
+const token = header.startsWith("Bearer ") ? header.slice(7) : null;
+
+// 5. Pagination Math:
+// offset = (page - 1) * limit
+// totalPages = Math.ceil(totalItems / limit)</pre>
+    </details>
+
+    <textarea id="editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off"></textarea>
+
+    <div class="actions">
+      <button id="runBtn">▶ Run <kbd>Ctrl + Enter</kbd></button>
+      <button id="resetBtn" class="secondary">Reset code</button>
+    </div>
+
+    <section class="output">
+      <div class="output-head">Console</div>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

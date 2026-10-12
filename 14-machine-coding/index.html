@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full Stack Machine Coding Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="/" class="back-link">← All Lessons</a>
+    <h1>14 · Machine Coding</h1>
+    <ul id="exerciseList"></ul>
+    <p class="progress" id="progress"></p>
+    <p class="sync" id="syncStatus"></p>
+  </aside>
+
+  <main>
+    <header>
+      <h2 id="title"></h2>
+      <p id="desc"></p>
+    </header>
+
+    <details class="box" id="hintBox">
+      <summary>Show hint</summary>
+      <p id="hint"></p>
+    </details>
+
+    <details class="box">
+      <summary>Machine Coding Cheat Sheet</summary>
+<pre>// 1. Debounce Pattern:
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+// 2. Immutable State Updates (no mutating input directly!):
+// Add: [...items, newItem]
+// Remove: items.filter(i => i.id !== id)
+// Update: items.map(i => i.id === id ? { ...i, qty: i.qty + 1 } : i)
+
+// 3. LocalStorage Pattern:
+// Save: localStorage.setItem(key, JSON.stringify(data))
+// Load: JSON.parse(localStorage.getItem(key)) || fallback
+
+// 4. Money / Total Rounding:
+// Math.round(value * 100) / 100  (or Number(value.toFixed(2)))</pre>
+    </details>
+
+    <textarea id="editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off"></textarea>
+
+    <div class="actions">
+      <button id="runBtn">▶ Run <kbd>Ctrl + Enter</kbd></button>
+      <button id="resetBtn" class="secondary">Reset code</button>
+    </div>
+
+    <section class="output">
+      <div class="output-head">Console</div>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

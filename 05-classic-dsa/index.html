@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classic DSA Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="/" class="back-link">← All Lessons</a>
+    <h1>05 · Classic DSA</h1>
+    <ul id="exerciseList"></ul>
+    <p class="progress" id="progress"></p>
+    <p class="sync" id="syncStatus"></p>
+  </aside>
+
+  <main>
+    <header>
+      <h2 id="title"></h2>
+      <p id="desc"></p>
+    </header>
+
+    <details class="box" id="hintBox">
+      <summary>Show hint</summary>
+      <p id="hint"></p>
+    </details>
+
+    <details class="box">
+      <summary>DSA Patterns Cheat Sheet</summary>
+<pre>// 1. Two Pointers (opposite ends):
+let left = 0, right = arr.length - 1;
+while (left < right) {
+  // compare or swap arr[left] and arr[right]
+  left++; right--;
+}
+
+// 2. Frequency / Seen Map (O(n) lookups):
+const seen = new Map(); // or const seen = {};
+for (let i = 0; i < arr.length; i++) {
+  const diff = target - arr[i];
+  if (seen.has(diff)) return [seen.get(diff), i];
+  seen.set(arr[i], i);
+}
+
+// 3. Stack (LIFO: push on open, pop on close):
+const stack = [];
+stack.push(char);
+const top = stack.pop();
+
+// 4. Binary Search (sorted array):
+let low = 0, high = arr.length - 1;
+while (low <= high) {
+  const mid = Math.floor((low + high) / 2);
+  if (arr[mid] === target) return mid;
+  if (arr[mid] < target) low = mid + 1;
+  else high = mid - 1;
+}
+
+// 5. Sliding Window (window sum / length):
+let sum = 0, max = 0;
+for (let i = 0; i < arr.length; i++) {
+  sum += arr[i];
+  if (i >= k) sum -= arr[i - k];
+  max = Math.max(max, sum);
+}</pre>
+    </details>
+
+    <textarea id="editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off"></textarea>
+
+    <div class="actions">
+      <button id="runBtn">▶ Run <kbd>Ctrl + Enter</kbd></button>
+      <button id="resetBtn" class="secondary">Reset code</button>
+    </div>
+
+    <section class="output">
+      <div class="output-head">Console</div>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "total": 12,
+  "exercises": {
+    "countUp": {
+      "num": 1,
+      "title": "1. countUp",
+      "completedAt": "2026-10-06T14:02:09.434Z",
+      "lastSavedAt": "2026-10-06T14:02:19.798Z",
+      "file": "solutions/01-countUp.js"
+    },
+    "sumTo": {
+      "num": 2,
+      "title": "2. sumTo",
+      "completedAt": "2026-10-06T14:05:44.491Z",
+      "lastSavedAt": "2026-10-06T14:05:44.491Z",
+      "file": "solutions/02-sumTo.js"
+    },
+    "sumArray": {
+      "num": 3,
+      "title": "3. sumArray",
+      "completedAt": "2026-10-06T14:07:11.104Z",
+      "lastSavedAt": "2026-10-06T14:07:11.104Z",
+      "file": "solutions/03-sumArray.js"
+    },
+    "findMax": {
+      "num": 4,
+      "title": "4. findMax",
+      "completedAt": "2026-10-07T06:00:54.083Z",
+      "lastSavedAt": "2026-10-07T06:20:11.731Z",
+      "file": "solutions/04-findMax.js"
+    },
+    "evens": {
+      "num": 5,
+      "title": "5. evens",
+      "completedAt": "2026-10-07T06:29:36.937Z",
+      "lastSavedAt": "2026-10-07T06:34:53.974Z",
+      "file": "solutions/05-evens.js"
+    },
+    "countChar": {
+      "num": 6,
+      "title": "6. countChar",
+      "completedAt": "2026-10-07T07:34:27.026Z",
+      "lastSavedAt": "2026-10-07T07:34:27.026Z",
+      "file": "solutions/06-countChar.js"
+    },
+    "reverseString": {
+      "num": 7,
+      "title": "7. reverseString",
+      "completedAt": "2026-10-07T07:49:41.021Z",
+      "lastSavedAt": "2026-10-07T07:50:12.161Z",
+      "file": "solutions/07-reverseString.js"
+    },
+    "fizzBuzz": {
+      "num": 8,
+      "title": "8. fizzBuzz",
+      "completedAt": "2026-10-07T08:16:33.653Z",
+      "lastSavedAt": "2026-10-07T08:16:42.942Z",
+      "file": "solutions/08-fizzBuzz.js"
+    },
+    "findIndex": {
+      "num": 9,
+      "title": "9. findIndex",
+      "completedAt": "2026-10-07T11:10:30.505Z",
+      "lastSavedAt": "2026-10-07T11:10:30.505Z",
+      "file": "solutions/09-findIndex.js"
+    },
+    "factorial": {
+      "num": 10,
+      "title": "10. factorial",
+      "completedAt": "2026-10-07T11:18:58.085Z",
+      "lastSavedAt": "2026-10-07T11:18:58.085Z",
+      "file": "solutions/10-factorial.js"
+    },
+    "isPrime": {
+      "num": 11,
+      "title": "11. isPrime",
+      "completedAt": "2026-10-07T11:43:58.121Z",
+      "lastSavedAt": "2026-10-07T11:43:58.121Z",
+      "file": "solutions/11-isPrime.js"
+    },
+    "table": {
+      "num": 12,
+      "title": "12. table (nested)",
+      "completedAt": "2026-10-07T12:02:59.019Z",
+      "lastSavedAt": "2026-10-07T12:04:35.813Z",
+      "file": "solutions/12-table.js"
+    }
+  }
+}

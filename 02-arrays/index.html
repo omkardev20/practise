@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrays Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="/" class="back-link">← All Lessons</a>
+    <h1>02 · Arrays</h1>
+    <ul id="exerciseList"></ul>
+    <p class="progress" id="progress"></p>
+    <p class="sync" id="syncStatus"></p>
+  </aside>
+
+  <main>
+    <header>
+      <h2 id="title"></h2>
+      <p id="desc"></p>
+    </header>
+
+    <details class="box" id="hintBox">
+      <summary>Show hint</summary>
+      <p id="hint"></p>
+    </details>
+
+    <details class="box">
+      <summary>Array cheat sheet</summary>
+<pre>// Common patterns:
+let result = [];            // start fresh
+result.push(item);          // add to end
+result.includes(item);      // check if exists
+
+// Manual transformation (like .map):
+for (const item of arr) { result.push(item * 2); }
+
+// Manual filtering (like .filter):
+for (const item of arr) { if (item % 2 === 0) result.push(item); }
+
+// Frequency Map (count items into an object):
+let counts = {};
+for (const item of arr) {
+  counts[item] = (counts[item] || 0) + 1;
+}
+
+// Early exit:
+for (const item of arr) {
+  if (condition) return item; // stop early!
+}</pre>
+    </details>
+
+    <textarea id="editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off"></textarea>
+
+    <div class="actions">
+      <button id="runBtn">▶ Run <kbd>Ctrl + Enter</kbd></button>
+      <button id="resetBtn" class="secondary">Reset code</button>
+    </div>
+
+    <section class="output">
+      <div class="output-head">Console</div>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

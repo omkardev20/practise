@@ -1,0 +1,9 @@
+{
+  "name": "interview-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hands-on full stack interview practice. Run `npm start` and open http://localhost:5174",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "total": 12,
+  "exercises": {
+    "doubleAll": {
+      "num": 1,
+      "title": "1. doubleAll",
+      "completedAt": "2026-10-08T07:00:43.479Z",
+      "lastSavedAt": "2026-10-08T07:06:51.764Z",
+      "file": "solutions/01-doubleAll.js"
+    },
+    "evensOnly": {
+      "num": 2,
+      "title": "2. evensOnly",
+      "completedAt": "2026-10-08T09:15:12.728Z",
+      "lastSavedAt": "2026-10-08T09:15:39.596Z",
+      "file": "solutions/02-evensOnly.js"
+    },
+    "findFirst": {
+      "num": 3,
+      "title": "3. findFirst",
+      "completedAt": "2026-10-08T12:11:01.293Z",
+      "lastSavedAt": "2026-10-08T12:11:01.293Z",
+      "file": "solutions/03-findFirst.js"
+    },
+    "allPositive": {
+      "num": 4,
+      "title": "4. allPositive",
+      "completedAt": "2026-10-08T13:30:26.972Z",
+      "lastSavedAt": "2026-10-08T13:30:26.972Z",
+      "file": "solutions/04-allPositive.js"
+    },
+    "hasNegative": {
+      "num": 5,
+      "title": "5. hasNegative",
+      "completedAt": "2026-10-08T13:41:33.274Z",
+      "lastSavedAt": "2026-10-08T13:41:33.274Z",
+      "file": "solutions/05-hasNegative.js"
+    },
+    "productArray": {
+      "num": 6,
+      "title": "6. productArray",
+      "completedAt": "2026-10-08T14:24:54.133Z",
+      "lastSavedAt": "2026-10-08T14:25:00.638Z",
+      "file": "solutions/06-productArray.js"
+    }
+  }
+}

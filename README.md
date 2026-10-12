@@ -1,15 +1,23 @@
 # Full Stack Interview Prep (1–2 years experience)
 
-Do the lessons in order. Each lesson folder has:
-- `lesson.js`: read it, then run it: `node lesson.js`
-- `exercises.js`: fill in the functions, then run `node exercises.js` until everything shows ✅
+## How to practise
+
+1. In this folder, start the save server and keep it running:
+   ```
+   node server.js
+   ```
+2. Open a lesson in the browser: http://localhost:5174 (or double-click `01-loops/index.html`).
+3. Type your code (no autocomplete, no paste), then press **Run** or **Ctrl + Enter** until all tests pass ✅.
+4. Passed code is saved automatically to `<lesson>/solutions/`, and `PROGRESS.md` is updated.
+
+Working with an AI tutor? Point it at `CLAUDE.md` first. It has my progress, my common mistakes and how I learn best.
 
 Don't copy answers. Type every loop yourself. Muscle memory comes back fast.
 
 ## Roadmap
 
 ### Part 1: Coding basics (most interviews start with these)
-- [ ] 01 Loops: for, while, for...of, for...in, break/continue, nested loops
+- [x] 01 Loops: for, while, for...of, for...in, break/continue, nested loops (12/12 done ✅)
 - [ ] 02 Arrays: map, filter, reduce, find, some/every, sort, spread
 - [ ] 03 Strings: reverse, palindrome, count characters, anagram
 - [ ] 04 Objects & frequency maps (the "count things" pattern)

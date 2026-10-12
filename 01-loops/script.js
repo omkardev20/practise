@@ -138,6 +138,68 @@ function saveState() {
 }
 const state = loadState();
 
+// ================= saving to files (needs `node server.js` running) =================
+const LESSON = "01-loops";
+const API = "http://localhost:5174/api";
+let serverOnline = false;
+
+function setSyncStatus(online) {
+  serverOnline = online;
+  const el = document.getElementById("syncStatus");
+  el.className = "sync " + (online ? "on" : "off");
+  el.textContent = online
+    ? "💾 Saving passed exercises to files"
+    : "⚠ Not saving to files. In the practise folder run: node server.js";
+}
+
+async function saveToServer(ex, code) {
+  try {
+    const res = await fetch(`${API}/save`, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({
+        lesson: LESSON,
+        id: ex.id,
+        num: EXERCISES.indexOf(ex),
+        title: ex.title,
+        desc: ex.desc,
+        code,
+        total: EXERCISES.filter((e) => e.fn).length,
+      }),
+    });
+    setSyncStatus(res.ok);
+    return res.ok;
+  } catch {
+    setSyncStatus(false);
+    return false;
+  }
+}
+
+// On load: bring back solutions saved in files, and push up any passed ones that aren't saved yet
+async function syncWithServer() {
+  let saved;
+  try {
+    const res = await fetch(`${API}/progress?lesson=${LESSON}`);
+    saved = await res.json();
+    setSyncStatus(true);
+  } catch {
+    setSyncStatus(false);
+    return;
+  }
+  for (const ex of EXERCISES) {
+    if (saved.done[ex.id]) state.done[ex.id] = true;
+    if (saved.code[ex.id] && state.code[ex.id] == null) {
+      state.code[ex.id] = saved.code[ex.id];
+      if (ex.id === current.id) editor.value = saved.code[ex.id];
+    }
+    if (state.done[ex.id] && !saved.done[ex.id] && state.code[ex.id]) {
+      await saveToServer(ex, state.code[ex.id]);
+    }
+  }
+  saveState();
+  renderList();
+}
+
 // ================= page elements =================
 const listEl = document.getElementById("exerciseList");
 const progressEl = document.getElementById("progress");
@@ -301,6 +363,7 @@ function run() {
   output.innerHTML = "";
 
   const ex = current;
+  const code = editor.value;
   let passed = 0;
   let printed = false;
   worker = new Worker(workerUrl);
@@ -318,6 +381,10 @@ function run() {
         state.done[ex.id] = true;
         saveState();
         renderList();
+        saveToServer(ex, code).then((ok) => {
+          if (ok) addLine(`💾 Saved to ${LESSON}/solutions/`, "muted");
+          else addLine("⚠ Not saved to a file. Start the server: node server.js", "warn");
+        });
       }
     }
   };
@@ -352,8 +419,9 @@ function run() {
     addLine("⏱ Stopped after 2 seconds. You probably have an infinite loop: check your loop condition, and make sure i (or n) changes every round.", "warn");
   }, 2000);
 
-  worker.postMessage({ code: editor.value, fn: ex.fn, tests: ex.tests });
+  worker.postMessage({ code, fn: ex.fn, tests: ex.tests });
 }
 
 // ================= start =================
 select(current.id);
+syncWithServer();
